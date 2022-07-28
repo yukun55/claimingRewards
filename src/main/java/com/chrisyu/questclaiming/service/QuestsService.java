@@ -1,5 +1,6 @@
 package com.chrisyu.questclaiming.service;
 
+import com.chrisyu.questclaiming.exceptions.QuestNotFoundException;
 import com.chrisyu.questclaiming.model.Quests;
 import com.chrisyu.questclaiming.repository.QuestsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,6 @@ public class QuestsService {
         if(questsOptional.isPresent()){
             return questsOptional.get();
         }
-        throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "quest not found"
-        );
+        throw new QuestNotFoundException("Quest Not Found");
     }
 }
