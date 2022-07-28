@@ -1,5 +1,4 @@
 package com.chrisyu.questclaiming.service;
-
 import com.chrisyu.questclaiming.model.Rewards;
 import com.chrisyu.questclaiming.repository.RewardsRepository;
 import org.springframework.beans.factory.annotation.Autowired;

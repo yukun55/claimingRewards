@@ -18,10 +18,10 @@ public class CompletedQuestsService {
 
     //Add a completed quests into completedQuests collection
     @Transactional
-    public void addCompleteQuests(CompletedQuests completedQuests){
+    public CompletedQuests addCompleteQuests(CompletedQuests completedQuests){
         if(completedQuestsRepository.existsById(completedQuests.getId())){
             throw new QuestAlreadyCompletedException("Quest already complete");
         }
-        completedQuestsRepository.save(completedQuests);
+        return completedQuestsRepository.save(completedQuests);
     }
 }

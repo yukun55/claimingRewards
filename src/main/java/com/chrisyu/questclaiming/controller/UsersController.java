@@ -1,6 +1,4 @@
 package com.chrisyu.questclaiming.controller;
-
-import com.chrisyu.questclaiming.model.Quests;
 import com.chrisyu.questclaiming.model.Users;
 import com.chrisyu.questclaiming.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
