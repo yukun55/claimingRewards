@@ -18,11 +18,11 @@ public class ClaimedRewardsService {
 
     //Add a claimed reward into claimedRewards collection
     @Transactional
-    public void addClaimReward(ClaimedRewards claimedRewards){
+    public ClaimedRewards addClaimReward(ClaimedRewards claimedRewards){
         if(claimedRewardsRepository.existsById(claimedRewards.getId())){
             throw new RewardAlreadyClaimedException("Reward already claimed");
         }
-        claimedRewardsRepository.save(claimedRewards);
+        return claimedRewardsRepository.save(claimedRewards);
     }
 
 }

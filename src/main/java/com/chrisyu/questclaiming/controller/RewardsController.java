@@ -1,7 +1,5 @@
 package com.chrisyu.questclaiming.controller;
-
 import com.chrisyu.questclaiming.model.Rewards;
-import com.chrisyu.questclaiming.model.Users;
 import com.chrisyu.questclaiming.service.RewardsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

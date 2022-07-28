@@ -1,7 +1,4 @@
 package com.chrisyu.questclaiming.service;
-
-import com.chrisyu.questclaiming.exceptions.UserAlreadyExistException;
-import com.chrisyu.questclaiming.model.Quests;
 import com.chrisyu.questclaiming.model.Users;
 import com.chrisyu.questclaiming.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
