@@ -4,10 +4,7 @@ import com.chrisyu.questclaiming.model.Quests;
 import com.chrisyu.questclaiming.model.Users;
 import com.chrisyu.questclaiming.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UsersController {
@@ -22,7 +19,8 @@ public class UsersController {
 
     //Handle the corresponding Http request
     @RequestMapping(value = "/users", method = RequestMethod.POST)
-    public void setUsers(@RequestBody Users user){
-        usersService.addUsers(user);
+    @ResponseBody
+    public Users setUsers(@RequestBody Users user){
+        return usersService.addUsers(user);
     }
 }
