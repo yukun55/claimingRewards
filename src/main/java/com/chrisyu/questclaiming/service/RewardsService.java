@@ -18,7 +18,7 @@ public class RewardsService {
 
     //Add a reward into rewards collection
     @Transactional
-    public void addRewards(Rewards reward){
-        rewardsRepository.save(reward);
+    public Rewards addRewards(Rewards reward){
+        return rewardsRepository.save(reward);
     }
 }

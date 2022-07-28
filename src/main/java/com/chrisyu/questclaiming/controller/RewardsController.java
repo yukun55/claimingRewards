@@ -4,10 +4,7 @@ import com.chrisyu.questclaiming.model.Rewards;
 import com.chrisyu.questclaiming.model.Users;
 import com.chrisyu.questclaiming.service.RewardsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RewardsController {
@@ -22,7 +19,8 @@ public class RewardsController {
 
     //Handle the corresponding Http request
     @RequestMapping(value = "/rewards", method = RequestMethod.POST)
-    public void setRewards(@RequestBody Rewards reward){
-        rewardsService.addRewards(reward);
+    @ResponseBody
+    public Rewards setRewards(@RequestBody Rewards reward){
+        return rewardsService.addRewards(reward);
     }
 }

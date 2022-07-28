@@ -20,7 +20,7 @@ public class UsersService {
 
     //Add a user into users collection
     @Transactional
-    public void addUsers(Users user){
-        usersRepository.save(user);
+    public Users addUsers(Users user){
+        return usersRepository.save(user);
     }
 }
