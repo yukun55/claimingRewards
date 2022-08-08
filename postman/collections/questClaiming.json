@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "2c8ca077-3275-4150-a9b5-c90d51571058",
-		"name": "questClaiming",
+		"name": "Quest/Reward",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -300,6 +300,52 @@
 					"path": [
 						"claimReward",
 						"{{rewardId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /quests/{{questId}}",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(pm.environment.get(\"questId\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quests/{{questId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quests",
+						"{{questId}}"
 					]
 				}
 			},
