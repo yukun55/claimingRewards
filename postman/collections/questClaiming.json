@@ -22,7 +22,8 @@
 							"    pm.expect(Boolean(jsonData.id)).to.eq(true)",
 							"});",
 							"",
-							"pm.environment.set(\"questId\", jsonData.id);"
+							"pm.environment.set(\"questId\", jsonData.id);",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -61,8 +62,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response returns ID\", function () {",
+							"    pm.expect(Boolean(jsonData.id)).to.eq(true)",
 							"});",
 							""
 						],
@@ -117,7 +124,8 @@
 							"    pm.expect(Boolean(jsonData.id)).to.eq(true)",
 							"});",
 							"",
-							"pm.environment.set(\"userId\", jsonData.id);"
+							"pm.environment.set(\"userId\", jsonData.id);",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -156,8 +164,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response returns ID\", function () {",
+							"    pm.expect(Boolean(jsonData.id)).to.eq(true)",
 							"});",
 							"",
 							""
@@ -249,10 +263,15 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"var jsonData = pm.response.json();",
+							"",
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
+							"pm.test(\"Response returns ID\", function () {",
+							"    pm.expect(Boolean(jsonData.id)).to.eq(true)",
+							"});",
 							""
 						],
 						"type": "text/javascript"

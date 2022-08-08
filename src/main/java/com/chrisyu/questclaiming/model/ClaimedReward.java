@@ -1,28 +1,27 @@
 package com.chrisyu.questclaiming.model;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.Date;
 
 @Document("claimedRewards")
-public class ClaimedRewards {
+public class ClaimedReward {
 
     @Id
-    private ClaimedRewardsId id;
+    private ClaimedRewardId id;
+    private Date claimedAt;
 
     //Constructor
-    public ClaimedRewards(ClaimedRewardsId id, Date claimedAt) {
+    public ClaimedReward(ClaimedRewardId id, Date claimedAt) {
         this.id = id;
         this.claimedAt = claimedAt;
     }
 
     //Getter and Setter
-    public ClaimedRewardsId getId() {
+    public ClaimedRewardId getId() {
         return id;
     }
 
-    public void setId(ClaimedRewardsId id) {
+    public void setId(ClaimedRewardId id) {
         this.id = id;
     }
 
@@ -34,5 +33,4 @@ public class ClaimedRewards {
         this.claimedAt = claimedAt;
     }
 
-    private Date claimedAt;
 }

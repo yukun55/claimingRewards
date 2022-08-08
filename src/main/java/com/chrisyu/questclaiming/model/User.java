@@ -4,17 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.UUID;
-
 @Document("users")
-public class Users {
+public class User {
     @Id
     private String id;
-    @JsonProperty("name")
     private String name;
 
     //Constructor
-    public Users(String id, String name) {
+    public User(String id, String name) {
         this.id = id;
         this.name = name;
     }
