@@ -2,27 +2,26 @@ package com.chrisyu.questclaiming.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.Date;
 
 @Document("completedQuests")
-public class CompletedQuests {
+public class CompletedQuest {
     @Id
-    private CompletedQuestsId id;
+    private CompletedQuestId id;
     private Date completedAt;
 
     //Constructor
-    public CompletedQuests(CompletedQuestsId id, Date completedAt) {
+    public CompletedQuest(CompletedQuestId id, Date completedAt) {
         this.id = id;
         this.completedAt = completedAt;
     }
 
     //Getter and Setter
-    public CompletedQuestsId getId() {
+    public CompletedQuestId getId() {
         return id;
     }
 
-    public void setId(CompletedQuestsId id) {
+    public void setId(CompletedQuestId id) {
         this.id = id;
     }
 

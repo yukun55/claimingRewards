@@ -1,11 +1,9 @@
 package com.chrisyu.questclaiming.repository;
-import com.chrisyu.questclaiming.model.Quests;
+import com.chrisyu.questclaiming.model.Quest;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
-public interface QuestsRepository extends MongoRepository<Quests, String> {
+public interface QuestRepository extends MongoRepository<Quest, String> {
 
 }

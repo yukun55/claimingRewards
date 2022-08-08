@@ -1,20 +1,21 @@
 package com.chrisyu.questclaiming.model;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.UUID;
-
 @Document("rewards")
-public class Rewards {
+public class Reward {
     @Id
     private String id;
-    private Double amount;
+    private double amount;
+    @JsonProperty("claimed")
+    private boolean isClaim;
 
     //Constructor
-    public Rewards(String id, Double amount) {
+    public Reward(String id, double amount, boolean isClaim) {
         this.id = id;
         this.amount = amount;
+        this.isClaim = isClaim;
     }
 
     //Getter and Setter
@@ -26,11 +27,19 @@ public class Rewards {
         this.id = id;
     }
 
-    public Double getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public boolean isClaim() {
+        return isClaim;
+    }
+
+    public void setClaim(boolean claim) {
+        isClaim = claim;
     }
 }
